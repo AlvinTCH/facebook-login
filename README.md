@@ -431,7 +431,7 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 
 | Prop                             | Type                                                        |
 | -------------------------------- | ----------------------------------------------------------- |
-| **`authenticationToken`**                | <code><a href="#authenticationtoken">authenticationToken</a> \| null</code> |
+| **`authenticationToken`**                | <code><a href="#authenticationtoken">AuthenticationToken</a> \| null</code> |
 
 #### AccessToken
 
@@ -446,6 +446,7 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 | **`token`**               | <code>string</code>   |
 | **`userId`**              | <code>string</code>   |
 
+#### AuthenticationToken
 
 #### LimitedFacebookLoginResponse
 
