@@ -36,7 +36,7 @@ Made with [contributors-img](https://contrib.rocks).
 
 If you want to know facebook library version, you should check:
 
-- [iOS](https://github.com/capacitor-community/facebook-login/blob/master/CapacitorCommunityFacebookLogin.podspec#L18-L19)
+- [iOS](https://github.com/capacitor-community/facebook-login/blob/master/GreytchCapacitorFacebookLogin.podspec#L18-L19)
 - [Android](https://github.com/capacitor-community/facebook-login/blob/master/android/build.gradle#L52)
 
 ## Installation
