@@ -427,6 +427,11 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 | **`recentlyGrantedPermissions`** | <code>string[]</code>                                       |
 | **`recentlyDeniedPermissions`**  | <code>string[]</code>                                       |
 
+#### FacebookLimitedLoginResponse
+
+| Prop                             | Type                                                        |
+| -------------------------------- | ----------------------------------------------------------- |
+| **`authenticationToken`**                | <code><a href="#authenticationtoken">authenticationToken</a> \| null</code> |
 
 #### AccessToken
 
@@ -446,7 +451,7 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 
 | Prop            | Type                                                                            |
 | --------------- | ------------------------------------------------------------------------------- |
-| **`authToken`** | <code>{ token: string; userId?: string; name?: string; email?: string; }</code> |
+| **`authenticationToken`** | <code>{ token: string; userId?: string; name?: string; email?: string; }</code> |
 
 
 #### FacebookCurrentAccessTokenResponse
@@ -463,13 +468,17 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 
 Make all properties in T optional
 
-<code>{ [P in keyof T]?: T[P]; }</code>
+<code>{
+ [P in keyof T]?: T[P];
+ }</code>
 
 
 #### Record
 
 Construct a type with a set of properties K of type T
 
-<code>{ [P in K]: T; }</code>
+<code>{
+ [P in K]: T;
+ }</code>
 
 </docgen-api>
