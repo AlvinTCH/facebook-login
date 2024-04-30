@@ -247,7 +247,7 @@ console.log(`Facebook user's email is ${result.email}`);
 
 * [`initialize(...)`](#initialize)
 * [`login(...)`](#login)
-* [`limtedLogin(...)`](#limitedlogin)
+* [`limitedLogin(...)`](#limitedlogin)
 * [`logout()`](#logout)
 * [`reauthorize()`](#reauthorize)
 * [`getCurrentAccessToken()`](#getcurrentaccesstoken)
@@ -294,21 +294,15 @@ login(options: { permissions: string[]; }) => Promise<FacebookLoginResponse>
 
 ### limitedLogin(...)
 
-#### Note: Implemented on iOS only
-
 ```typescript
-login(options: {
-  permissions: string[];
-  tracking?: 'limited' | 'enabled' // defaults to 'limited'
-  nonce?: string;
-}) => Promise<FacebookLimitedLoginResponse>
+limitedLogin(options: { permissions: string[]; tracking?: 'limited' | 'enabled'; nonce?: string; }) => Promise<LimitedFacebookLoginResponse>
 ```
 
-| Param         | Type                                    |
-| ------------- | --------------------------------------- |
-| **`options`** | <code>{ permissions: string[]; tracking?: 'limited' or 'enabled'; 'nonce': string; }</code> |
+| Param         | Type                                                                                       |
+| ------------- | ------------------------------------------------------------------------------------------ |
+| **`options`** | <code>{ permissions: string[]; tracking?: 'limited' \| 'enabled'; nonce?: string; }</code> |
 
-**Returns:** <code>Promise&lt;<a href="#facebooklimitedloginresponse">FacebookLimitedLoginResponse</a>&gt;</code>
+**Returns:** <code>Promise&lt;<a href="#limitedfacebookloginresponse">LimitedFacebookLoginResponse</a>&gt;</code>
 
 --------------------
 
@@ -431,13 +425,8 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 | -------------------------------- | ----------------------------------------------------------- |
 | **`accessToken`**                | <code><a href="#accesstoken">AccessToken</a> \| null</code> |
 | **`recentlyGrantedPermissions`** | <code>string[]</code>                                       |
-| **`recentlyDeniedPermissions`**  | <code>string[]</code>        
+| **`recentlyDeniedPermissions`**  | <code>string[]</code>                                       |
 
-#### FacebookLimitedLoginResponse
-
-| Prop                             | Type                                                        |
-| -------------------------------- | ----------------------------------------------------------- |
-| **`authToken`**                | <code><a href="#authtoken">AuthToken</a> \| null</code> |
 
 #### AccessToken
 
@@ -452,15 +441,12 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 | **`token`**               | <code>string</code>   |
 | **`userId`**              | <code>string</code>   |
 
-#### AuthToken
 
-| Prop                      | Type                  |
-| ------------------------- | --------------------- |
-| **`token`**               | <code>string</code>   |
-| **`userId`**              | <code>string</code>   |
-| **`name`**                | <code>string</code>   |
-| **`email`**               | <code>string</code>   |
-| **`userId`**              | <code>string</code>   |
+#### LimitedFacebookLoginResponse
+
+| Prop            | Type                                                                            |
+| --------------- | ------------------------------------------------------------------------------- |
+| **`authToken`** | <code>{ token: string; userId?: string; name?: string; email?: string; }</code> |
 
 
 #### FacebookCurrentAccessTokenResponse
@@ -477,17 +463,13 @@ setAdvertiserIDCollectionEnabled(options: { enabled: boolean; }) => Promise<void
 
 Make all properties in T optional
 
-<code>{
- [P in keyof T]?: T[P];
- }</code>
+<code>{ [P in keyof T]?: T[P]; }</code>
 
 
 #### Record
 
 Construct a type with a set of properties K of type T
 
-<code>{
- [P in K]: T;
- }</code>
+<code>{ [P in K]: T; }</code>
 
 </docgen-api>
